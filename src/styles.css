@@ -34,7 +34,7 @@ img {
 }
 
 .my-container {
-  margin: 100px auto;
+  margin: 100px auto 10px;
   padding: 20px 40px;
   max-width: 100%;
   width: 500px;
@@ -77,4 +77,8 @@ img {
 .weather-icons {
   font-size: 20px;
   color: #e29e35;
+}
+
+.code-link {
+  text-align: center;
 }
