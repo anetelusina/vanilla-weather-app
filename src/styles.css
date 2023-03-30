@@ -82,3 +82,7 @@ img {
 .code-link {
   text-align: center;
 }
+
+#weather {
+  text-transform: capitalize;
+}

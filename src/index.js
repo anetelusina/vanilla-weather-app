@@ -80,7 +80,7 @@ function showWeather(response) {
 
   h1.innerHTML = `${temperature}°C`;
   h2.innerHTML = response.data.name;
-  weatherConditions.innerHTML = response.data.weather[0].main;
+  weatherConditions.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
 }
