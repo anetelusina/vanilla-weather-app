@@ -77,12 +77,17 @@ function showWeather(response) {
   let weatherConditions = document.querySelector("#weather");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
+  let iconElement = document.querySelector("#weather-icon");
 
   h1.innerHTML = `${temperature}°C`;
   h2.innerHTML = response.data.city;
   weatherConditions.innerHTML = response.data.condition.description;
   humidity.innerHTML = response.data.temperature.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.setAttribute(
+    "src",
+    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
 }
 
 function showGeolocation(position) {
