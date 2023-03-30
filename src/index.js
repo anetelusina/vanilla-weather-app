@@ -68,12 +68,11 @@ function searchCity(event) {
   event.preventDefault();
   let city = document.querySelector("#enter-city").value;
   let apiKey = "a57953e8358331d820119b9c69a6c518";
-  apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
 
 function showWeather(response) {
-  console.log(response.data);
   let temperature = Math.round(response.data.main.temp);
   let weatherConditions = document.querySelector("#weather");
   let humidity = document.querySelector("#humidity");
