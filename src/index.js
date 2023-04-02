@@ -73,14 +73,15 @@ function searchCity(event) {
 }
 
 function showWeather(response) {
-  let temperature = Math.round(response.data.temperature.current);
   let weatherConditions = document.querySelector("#weather");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let iconElement = document.querySelector("#weather-icon");
   let temperatureElement = document.querySelector("#temperature");
 
-  temperatureElement.innerHTML = `${temperature}`;
+  celsiusTemperature = response.data.temperature.current;
+
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   h2.innerHTML = response.data.city;
   weatherConditions.innerHTML = response.data.condition.description;
   humidity.innerHTML = response.data.temperature.humidity;
@@ -97,21 +98,23 @@ function showGeolocation(position) {
   axios.get(apiUrl).then(showWeather);
 }
 
-showAll();
-
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (20 * 9) / 5 + 32;
   let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
-let cityForm = document.querySelector("#city-form");
 let geolocationButton = document.querySelector("#geolocation-button");
+
+let celsiusTemperature = null;
+
+let cityForm = document.querySelector("#city-form");
+cityForm.addEventListener("submit", searchCity);
 
 geolocationButton.addEventListener("click", showGeolocation);
 
-cityForm.addEventListener("submit", searchCity);
-
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+showAll();
