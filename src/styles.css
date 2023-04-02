@@ -83,6 +83,11 @@ img {
   text-align: center;
 }
 
+.units {
+  font-size: 30px;
+  opacity: 0.8;
+}
+
 #weather {
   text-transform: capitalize;
 }

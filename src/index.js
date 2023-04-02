@@ -78,16 +78,14 @@ function showWeather(response) {
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let iconElement = document.querySelector("#weather-icon");
+  let temperatureElement = document.querySelector("#temperature");
 
-  h1.innerHTML = `${temperature}°C`;
+  temperatureElement.innerHTML = `${temperature}`;
   h2.innerHTML = response.data.city;
   weatherConditions.innerHTML = response.data.condition.description;
   humidity.innerHTML = response.data.temperature.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
-  iconElement.setAttribute(
-    "src",
-    `https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
-  );
+  iconElement.setAttribute("src", response.data.condition.icon_url);
 }
 
 function showGeolocation(position) {
@@ -101,9 +99,19 @@ function showGeolocation(position) {
 
 showAll();
 
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (20 * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+
 let cityForm = document.querySelector("#city-form");
 let geolocationButton = document.querySelector("#geolocation-button");
 
 geolocationButton.addEventListener("click", showGeolocation);
 
 cityForm.addEventListener("submit", searchCity);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
