@@ -53,6 +53,14 @@ function showDate() {
   return fullDate;
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function showAll() {
   let currentTime = document.querySelector("#current-time");
   currentTime.innerHTML = showTime();
@@ -73,27 +81,34 @@ function searchCity(event) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row week-days">`;
 
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
+        ${formatDay(forecastDay.time)}  
+        </div>  
 
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col">
-      ${day}
-        
         <div class="row weather-icons">
-          <div class="col"><i class="fa-solid fa-sun"></i></div>
-        </div>
 
+          <div class="col">
+          <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+            forecastDay.condition.icon
+          }.png"
+          </div>
+          
+        </div>
         <div class="row temperature-forecast">
-          <div class="col">18°</div>
+          <div class="col">${Math.round(forecastDay.temperature.day)}°</div>
         </div>
       </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
