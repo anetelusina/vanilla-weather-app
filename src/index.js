@@ -122,10 +122,8 @@ function displayForecast(response) {
 }
 
 function getForecast(city) {
-  console.log(city);
   let apiKey = "8ebe5at6a2e3oa0fbc8336f4afd097c4";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
 }
 
