@@ -72,7 +72,8 @@ function searchCity(event) {
   axios.get(apiUrl).then(showWeather);
 }
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row week-days">`;
@@ -99,6 +100,14 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(city) {
+  console.log(city);
+  let apiKey = "8ebe5at6a2e3oa0fbc8336f4afd097c4";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showWeather(response) {
   let weatherConditions = document.querySelector("#weather");
   let humidity = document.querySelector("#humidity");
@@ -114,6 +123,8 @@ function showWeather(response) {
   humidity.innerHTML = response.data.temperature.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
   iconElement.setAttribute("src", response.data.condition.icon_url);
+
+  getForecast(response.data.city);
 }
 
 function showGeolocation(position) {
@@ -158,4 +169,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 showAll();
-displayForecast();
