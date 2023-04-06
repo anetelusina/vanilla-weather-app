@@ -80,6 +80,14 @@ function searchCity(event) {
   axios.get(apiUrl).then(showWeather);
 }
 
+function search(city) {
+  let apiKey = "8ebe5at6a2e3oa0fbc8336f4afd097c4";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showWeather);
+}
+
+search("London");
+
 function displayForecast(response) {
   let forecast = response.data.daily;
 
