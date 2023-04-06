@@ -88,16 +88,17 @@ function displayForecast(response) {
   let forecastHTML = `<div class="row week-days">`;
 
   forecast.forEach(function (forecastDay, index) {
+    // could add if if (index < 6 && index > 0) to hide today's forecast temp
     if (index < 6) {
       forecastHTML =
         forecastHTML +
         `<div class="col">
-        ${formatDay(forecastDay.time)}  
-        </div>  
+          ${formatDay(forecastDay.time)}  
+         
 
-        <div class="row weather-icons">
+        <div class="row weather-icons justify-content-center">
 
-          <div class="col">
+          <div>
           <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
             forecastDay.condition.icon
           }.png"
@@ -105,9 +106,14 @@ function displayForecast(response) {
           
         </div>
         <div class="row temperature-forecast">
-          <div class="col">${Math.round(forecastDay.temperature.day)}°</div>
+          <div>${Math.round(
+            forecastDay.temperature.maximum
+          )}° <span class="min-temperature">${Math.round(
+          forecastDay.temperature.minimum
+        )}°</span></div>
         </div>
-      </div>`;
+      </div>
+      </div> `;
     }
   });
 

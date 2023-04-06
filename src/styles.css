@@ -21,7 +21,7 @@ h2 {
   font-weight: 600;
 }
 
-img {
+.main-icon img {
   width: 200px;
 }
 
@@ -91,6 +91,14 @@ a {
   opacity: 0.8;
   cursor: default;
   text-decoration: none;
+}
+
+.weather-icons img {
+  width: 50px;
+}
+
+.min-temperature {
+  opacity: 60%;
 }
 
 #weather {
