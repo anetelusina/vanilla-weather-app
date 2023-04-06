@@ -72,6 +72,33 @@ function searchCity(event) {
   axios.get(apiUrl).then(showWeather);
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row week-days">`;
+
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col">
+      ${day}
+        
+        <div class="row weather-icons">
+          <div class="col"><i class="fa-solid fa-sun"></i></div>
+        </div>
+
+        <div class="row temperature-forecast">
+          <div class="col">18°</div>
+        </div>
+      </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showWeather(response) {
   let weatherConditions = document.querySelector("#weather");
   let humidity = document.querySelector("#humidity");
@@ -131,3 +158,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 showAll();
+displayForecast();
