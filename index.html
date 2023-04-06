@@ -30,6 +30,23 @@
   <body>
     <div class="container">
       <div class="my-container">
+        <form id="city-form">
+          <div class="row justify-content-center">
+            <div class="col-6">
+              <input
+                type="text"
+                placeholder="Enter a city..."
+                class="form-control enter-city"
+                id="enter-city" />
+            </div>
+            <div class="col-1">
+              <button type="submit" class="form-control-plaintext">
+                <i
+                  class="fa-solid fa-magnifying-glass-location search-icon"></i>
+              </button>
+            </div>
+          </div>
+        </form>
         <h2></h2>
         <h1>
           <span id="temperature"></span>
@@ -55,29 +72,11 @@
 
         <div class="weather-info">
           <p id="weather"></p>
-          <p>Humidity: <span id="humidity">3</span>%</p>
-          <p>Wind: <span id="wind">5</span> km/h</p>
+          <p>Humidity: <span id="humidity"></span>%</p>
+          <p>Wind: <span id="wind"></span> km/h</p>
         </div>
 
         <br />
-
-        <form id="city-form">
-          <div class="row justify-content-center">
-            <div class="col-6">
-              <input
-                type="text"
-                placeholder="Enter a city..."
-                class="form-control enter-city"
-                id="enter-city" />
-            </div>
-            <div class="col-1">
-              <button type="submit" class="form-control-plaintext">
-                <i
-                  class="fa-solid fa-magnifying-glass-location search-icon"></i>
-              </button>
-            </div>
-          </div>
-        </form>
 
         <br />
 

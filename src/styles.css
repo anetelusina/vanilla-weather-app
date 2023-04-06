@@ -21,10 +21,6 @@ h2 {
   font-weight: 600;
 }
 
-.main-icon img {
-  width: 200px;
-}
-
 a {
   text-decoration: none;
 }
@@ -84,6 +80,10 @@ a {
 
 .units {
   font-size: 30px;
+}
+
+.main-icon img {
+  width: 100px;
 }
 
 .weather-icons img {
