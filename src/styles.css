@@ -78,19 +78,12 @@ a {
   color: #505050;
 }
 
-.code-link {
+.github-link {
   text-align: center;
 }
 
 .units {
   font-size: 30px;
-}
-
-.units .active {
-  color: #000000;
-  opacity: 0.8;
-  cursor: default;
-  text-decoration: none;
 }
 
 .weather-icons img {
