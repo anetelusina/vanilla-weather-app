@@ -1,12 +1,20 @@
 h1,
 h2,
+.weather-info,
+.dates,
+.week-days,
+.temperature-forecast {
+  color: #5a6275;
+}
+
+h1,
+h2,
 .weather-info {
   text-align: center;
 }
 
 h1,
 h2 {
-  opacity: 0.7;
   word-spacing: -25px;
 }
 
@@ -17,8 +25,7 @@ h1 {
 }
 
 h2 {
-  padding-bottom: 30px;
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 600;
 }
 
@@ -30,8 +37,7 @@ a {
 .dates {
   line-height: 0.5;
   font-size: 13px;
-  font-weight: 400;
-  opacity: 0.9;
+  font-weight: 600;
 }
 
 .my-container {
@@ -48,6 +54,7 @@ a {
 .week-days,
 .temperature-forecast {
   font-size: 14px;
+  font-weight: 600;
 }
 
 .forecast-container {
