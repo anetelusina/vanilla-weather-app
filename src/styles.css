@@ -20,7 +20,7 @@ h2 {
 
 h1 {
   margin-bottom: -10px;
-  font-size: 130px;
+  font-size: 150px;
   font-weight: 600;
 }
 
@@ -36,18 +36,18 @@ a {
 .weather-info,
 .dates {
   line-height: 0.5;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .my-container {
-  margin: 100px auto 10px;
-
+  margin: 60px auto 10px;
   max-width: 100%;
   width: 500px;
-  border: #eedcc4 2px solid;
-  border-radius: 5px;
   font-family: "Poppins", sans-serif;
+  box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e7e6ed;
+  border-radius: 5px;
 }
 
 .current-weather-container {
@@ -64,28 +64,26 @@ a {
 }
 
 .forecast-container {
-  padding: 20px 40px;
-  opacity: 0.8;
+  padding: 50px 60px;
   line-height: 2;
 }
 
-.search-icon {
-  font-size: 20px;
+.search-icon,
+.geolocation-button {
+  font-size: 25px;
   color: #9a9a9a;
   transition: all 150ms ease-in-out;
 }
 
-.search-icon:hover {
-  color: #bebcbc;
+.search-icon:hover,
+.geolocation-button:hover {
+  opacity: 0.8;
 }
 
 .enter-city {
-  background-color: rgb(190, 212, 190, 0.3);
-}
-
-.geolocation-button {
-  background-color: rgba(207, 190, 160, 0.3);
-  color: #505050;
+  background: rgba(255, 253, 253, 0.259);
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .github-link {
@@ -93,9 +91,9 @@ a {
 }
 
 .units {
-  font-size: 30px;
+  font-size: 35px;
   font-weight: 700;
-  vertical-align: 70px;
+  vertical-align: 80px;
 }
 
 .main-icon img {

@@ -97,7 +97,7 @@ function displayForecast(response) {
 
   forecast.forEach(function (forecastDay, index) {
     // could add if if (index < 6 && index > 0) to hide today's forecast temp
-    if (index < 6) {
+    if (index < 5) {
       forecastHTML =
         forecastHTML +
         `<div class="col">
@@ -149,7 +149,7 @@ function showWeather(response) {
   weatherConditions.innerHTML = response.data.condition.description;
   humidity.innerHTML = response.data.temperature.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
-  iconElement.setAttribute("src", response.data.condition.icon_url);
+  iconElement.setAttribute("src", `images/${response.data.condition.icon}.svg`);
 
   getForecast(response.data.city);
 }

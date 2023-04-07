@@ -33,7 +33,7 @@
         <div class="current-weather-container">
           <form id="city-form">
             <div class="row justify-content-center">
-              <div class="col-6">
+              <div class="col-7">
                 <input
                   type="text"
                   placeholder="Enter a city..."
@@ -42,14 +42,16 @@
               </div>
               <div class="col-1">
                 <button type="submit" class="form-control-plaintext">
-                  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                  <i
+                    class="fa-solid fa-magnifying-glass search-icon"
+                    style="color: #ffffff"></i>
                 </button>
               </div>
               <div class="col-1">
-                <button
-                  id="geolocation-button"
-                  class="geolocation-button form-control">
-                  <i class="fa-solid fa-location-dot search-icon"></i>
+                <button id="geolocation-button" class="form-control-plaintext">
+                  <i
+                    class="fa-solid fa-location-dot geolocation-button"
+                    style="color: #ffffff"></i>
                 </button>
               </div>
             </div>
@@ -72,9 +74,10 @@
           </h1>
 
           <br />
-          <div class="col main-icon">
-            <img src="images/sun.svg" alt="sun icon" id="weather-icon" />
+          <div class="col main-icon d-flex justify-content-center">
+            <img src="images/sun.svg" alt="weather icon" id="weather-icon" />
           </div>
+          <br />
 
           <div class="weather-info">
             <p id="weather"></p>
