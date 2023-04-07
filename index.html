@@ -30,60 +30,60 @@
   <body>
     <div class="container">
       <div class="my-container">
-        <form id="city-form">
-          <div class="row justify-content-center">
-            <div class="col-6">
-              <input
-                type="text"
-                placeholder="Enter a city..."
-                class="form-control enter-city"
-                id="enter-city" />
+        <div class="current-weather-container">
+          <form id="city-form">
+            <div class="row justify-content-center">
+              <div class="col-6">
+                <input
+                  type="text"
+                  placeholder="Enter a city..."
+                  class="form-control enter-city"
+                  id="enter-city" />
+              </div>
+              <div class="col-1">
+                <button type="submit" class="form-control-plaintext">
+                  <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                </button>
+              </div>
+              <div class="col-1">
+                <button
+                  id="geolocation-button"
+                  class="geolocation-button form-control">
+                  <i class="fa-solid fa-location-dot search-icon"></i>
+                </button>
+              </div>
             </div>
-            <div class="col-1">
-              <button type="submit" class="form-control-plaintext">
-                <i class="fa-solid fa-magnifying-glass search-icon"></i>
-              </button>
-            </div>
-            <div class="col-1">
-              <button
-                id="geolocation-button"
-                class="geolocation-button form-control">
-                <i class="fa-solid fa-location-dot search-icon"></i>
-              </button>
+          </form>
+
+          <div class="row pt-5">
+            <div class="col-9 d-flex justify-content-start"><h2></h2></div>
+            <div class="col-3 d-flex justify-content-end text-end">
+              <div class="dates">
+                <p id="current-time"></p>
+                <p id="current-day"></p>
+                <p id="current-date"></p>
+              </div>
             </div>
           </div>
-        </form>
 
-        <div class="row pt-5">
-          <div class="col-9 d-flex justify-content-start"><h2></h2></div>
-          <div class="col-3 d-flex justify-content-end text-end">
-            <div class="dates">
-              <p id="current-time"></p>
-              <p id="current-day"></p>
-              <p id="current-date"></p>
-            </div>
+          <h1>
+            <span id="temperature"></span>
+            <span class="units">°C</span>
+          </h1>
+
+          <br />
+          <div class="col main-icon">
+            <img src="images/sun.svg" alt="sun icon" id="weather-icon" />
           </div>
+
+          <div class="weather-info">
+            <p id="weather"></p>
+            <p>Humidity: <span id="humidity"></span>%</p>
+            <p>Wind: <span id="wind"></span> km/h</p>
+          </div>
+
+          <br />
         </div>
-
-        <h1>
-          <span id="temperature"></span>
-          <span class="units">°C</span>
-        </h1>
-
-        <br />
-        <div class="col main-icon">
-          <img src="images/sun.svg" alt="sun icon" id="weather-icon" />
-        </div>
-
-        <div class="weather-info">
-          <p id="weather"></p>
-          <p>Humidity: <span id="humidity"></span>%</p>
-          <p>Wind: <span id="wind"></span> km/h</p>
-        </div>
-
-        <br />
-
-        <hr />
 
         <div class="text-center forecast-container" id="forecast"></div>
       </div>
