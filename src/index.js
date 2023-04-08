@@ -93,34 +93,29 @@ function displayForecast(response) {
 
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="row week-days">`;
+  let forecastHTML = `<div class="row week-days justify-content-center">`;
 
   forecast.forEach(function (forecastDay, index) {
-    // could add if if (index < 6 && index > 0) to hide today's forecast temp
     if (index < 5) {
       forecastHTML =
         forecastHTML +
-        `<div class="col">
+        `<div class="col-2">
           ${formatDay(forecastDay.time)}  
-         
-
-        <div class="row weather-icons justify-content-center">
-
-          <div>
-          <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
-            forecastDay.condition.icon
-          }.png"
+          <div class="row weather-icons justify-content-center">
+            <div>
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+              forecastDay.condition.icon
+            }.png"
+            </div>
           </div>
-          
-        </div>
-        <div class="row temperature-forecast">
-          <div>${Math.round(
-            forecastDay.temperature.maximum
-          )}° <span class="min-temperature">${Math.round(
+          <div class="row temperature-forecast justify-content-center">
+            <div>${Math.round(
+              forecastDay.temperature.maximum
+            )}° <span class="min-temperature">${Math.round(
           forecastDay.temperature.minimum
         )}°</span></div>
+          </div>
         </div>
-      </div>
       </div> `;
     }
   });
